@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CheckInGrid from './components/check-in-grid';
+import MoodGrid from './components/mood-grid';
+import DateBar from './components/date-bar';
+
+import FooterBar from './components/footer-bar';
+
+const firebase = require('firebase');
+const firebaseui = require('firebaseui');
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="the-daily-balance-app">
+        <DateBar />
+        <CheckInGrid />
+        <MoodGrid />
+
+
+        <FooterBar />
       </div>
     );
   }
