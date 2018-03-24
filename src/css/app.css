@@ -1,4 +1,8 @@
 
+main {
+  max-width: 600px;
+  margin: auto;
+}
 
 /* date bar */
 .date-bar {
@@ -48,11 +52,11 @@
 }
 
 .check-in-grid__list li {
-  width: 32vw;
+  width: 32%;
   height: 93px;
   line-height: 100px;
   background-color: #e8eff7;
-  margin-bottom: 2vw;
+  margin-bottom: 2%;
   border-radius: 3px;
 }
 
@@ -110,6 +114,7 @@
 /* mood grid */
 .mood-grid {
   margin-top: 2rem;
+  max-width: 600px;
 }
 
 .mood-grid__list {

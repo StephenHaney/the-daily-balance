@@ -13,8 +13,11 @@ class App extends Component {
     return (
       <div className="the-daily-balance-app">
         <DateBar />
-        <CheckInGrid />
-        <MoodGrid />
+
+        <main>
+          <CheckInGrid />
+          <MoodGrid />
+        </main>
 
 
         <FooterBar />
