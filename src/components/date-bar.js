@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 function DateBar() {
   return (
     <div class="date-bar">
-      <button className="date-bar__back-btn">back</button>
+      <button className="date-bar__btn-back">↫</button>
 
-      <h4 className="date-bar__date">Date</h4>
+      <h6 className="date-bar__date">Fri Mar 23</h6>
 
-      <button className="date-bar__next-btn">next</button>
+      <button className="date-bar__btn-next date-bar__btn--disabled">↬</button>
     </div>
   );
 }
