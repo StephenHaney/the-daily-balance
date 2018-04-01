@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { } from 'react';
 
 function CheckInGrid() {
   return (
     <div className="check-in-grid">
-      <h3>Today I spent time with ... </h3>
+      <h3>And I spent time on ... </h3>
       <ul className="check-in-grid__list">
         <li>Friends</li>
         <li>Family</li>

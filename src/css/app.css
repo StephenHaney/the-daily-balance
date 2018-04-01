@@ -2,18 +2,21 @@
 main {
   max-width: 600px;
   margin: auto;
+  padding-bottom: 100px;
 }
 
 /* date bar */
 .date-bar {
   width: calc(100% - 26px);
-  margin-left: 13px;
   height: 45px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 600px;
+  position: relative;
+  margin: auto;
 }
 
 .date-bar__date {
@@ -39,6 +42,19 @@ main {
   color: #eee;
 }
 
+.date-bar__user-image {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 1px;
+  border: 1px solid #a3b7ff;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+
+
 /* check in grid */
 .check-in-grid {
   margin-top: 2rem;
@@ -54,11 +70,15 @@ main {
 .check-in-grid__list li {
   width: 32%;
   height: 93px;
-  line-height: 100px;
-  background-color: #e8eff7;
+  line-height: 93px;
+  background-color: #f2f6f9;
   margin-bottom: 2%;
   border-radius: 3px;
 }
+
+
+/* 
+three colors, but each row is the same
 
 .check-in-grid li:nth-of-type(1),
 .check-in-grid li:nth-of-type(2),
@@ -77,9 +97,11 @@ main {
 .check-in-grid li:nth-of-type(9) {
   background-color: #fbeab4;
 }
+*/
 
 
 /*
+unique colors for each box
 .check-in-grid li:nth-of-type(1) {
   background-color: #bcc8f7;
 }
@@ -114,28 +136,27 @@ main {
 /* mood grid */
 .mood-grid {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   max-width: 600px;
 }
 
 .mood-grid__list {
   display: flex;
-  margin-bottom: 8vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
   justify-content: space-evenly;
   text-align: center;
   color: #bbb;
 }
 
 .mood-grid li {
-  width: 23vw;
-  height: 23vw;
+  width: 22vw;
   max-width: 100px;
-  max-height: 100px;
   text-align: center;
 }
 
 .mood-grid button {
-  width: 24vw;
-  height: 24vw;
+  width: 100%;
   max-width: 100px;
   max-height: 100px;
   border-radius: 50%;
@@ -162,21 +183,27 @@ main {
 .footer {
   position: fixed;
   display: flex;
+  justify-content: center;
   background-color: #fff;
   border-top: 1px solid #eee;
   height: 45px;
+  line-height: 45px;
   bottom: 0;
   left: 13px;
   width: calc(100% - 26px);
+  text-align: center;
 }
 
-.footer button {
+.footer__link {
   color: #888;
   flex-grow: 1;
   flex-basis: 0;
+  max-width: 120px;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
-.footer button.footer__btn--selected {
+.footer__link--selected {
   font-weight: bold;
   color: #a3b7ff;
   font-size: 1.4rem;
@@ -187,3 +214,16 @@ main {
 
 
 
+
+/* charts */
+
+.chart-card {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  border: 1px solid #eee;
+}
