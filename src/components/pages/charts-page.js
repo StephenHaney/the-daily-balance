@@ -1,15 +1,20 @@
 import React, { } from 'react';
+
+import { AppStateConsumer } from 'app.js';
+
 import { ResponsiveContainer, XAxis, YAxis, LineChart, Line } from 'recharts';
 import { ResponsivePie } from 'nivo'
 
-function ChartsPage() {
+function ChartsPage(props) {
+  if (props.appState.readyToRender === false) { return null; }
+
   return(
     <div>
 
       <div className="chart-card">
         <h4>My mood over the last 7 days</h4>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={[{name: 'a', value: 3},{name: 'b', value: 1},{name: 'c', value: 3},{name: 'd', value: 3},{name: 'e', value: 2},{name: 'f', value: 2},{name: 'g', value: 3}]}>
+          <LineChart data={[{name: 'Sunday', value: 3},{name: 'Monday', value: 1},{name: 'Tuesday', value: 3},{name: 'Wednesday', value: 3},{name: 'Thursday', value: 2},{name: 'Friday', value: 2},{name: 'Saturday', value: 3}]}>
             <XAxis dataKey="name" />
             <Line type="monotone" dataKey="value" stroke="#8884d8" />
           </LineChart>
@@ -117,4 +122,8 @@ function ChartsPage() {
   )
 }
 
-export default ChartsPage;
+export default props => (
+  <AppStateConsumer>
+    {context => <ChartsPage {...props} appState={context} />}
+  </AppStateConsumer>
+);

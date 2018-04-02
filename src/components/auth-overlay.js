@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import firebase, { ui } from '../../firebase/firebase.js';
-import { Redirect } from 'react-router-dom';
+import firebase, { ui } from '../firebase/firebase.js';
 import { AppStateConsumer } from 'app.js';
 
 // Store uiConfig variables:
 const uiConfig = {
-  signInSuccessUrl: '/home',
+  signInSuccessUrl: '/',
   signInOptions: [
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
   // Terms of service url
   tosUrl: '/privacy'
 };
 
-class AuthPage extends Component {
+class AuthOverlay extends Component {
   componentDidMount() {
     if (this.props.appState.currentUser === null) {
       // no user logged in, start process:
@@ -25,13 +24,18 @@ class AuthPage extends Component {
   }
 
   render() {
+    // don't render the login if the user is logged in:
     if (this.props.appState.currentUser !== null) {
-      return ( <Redirect to={{ pathname: '/home' }}/> );
+      return '';
     }
 
     return (
-      <div>
-        <div id="firebaseui-auth-container"></div>
+      <div className="auth-overlay">
+        <div className="auth-card">
+          <h2>Hello there!</h2>
+          <h3>Sign in to get started</h3>
+          <div id="firebaseui-auth-container"></div>
+        </div>
       </div>
     );
   }
@@ -39,6 +43,6 @@ class AuthPage extends Component {
 
 export default props => (
   <AppStateConsumer>
-    {context => <AuthPage {...props} appState={context} />}
+    {context => <AuthOverlay {...props} appState={context} />}
   </AppStateConsumer>
 );

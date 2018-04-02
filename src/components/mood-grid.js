@@ -3,7 +3,7 @@ import React, { } from 'react';
 function MoodGrid() {
   return (
     <div className="mood-grid">
-    <h3>Today I am feeling ...</h3>
+    <h3>Today I am feeling</h3>
       <ul className="mood-grid__list">
         <li>
           <button className="mood-grid__btn-well">

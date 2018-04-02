@@ -1,19 +1,28 @@
 import React, { } from 'react';
 
+import CheckInGridItem from './check-in-grid-item';
+
 function CheckInGrid() {
+  let defaultOptions = [
+    'Friends',
+    'Family',
+    'Partner',
+    'Hobbies',
+    'Home',
+    'Career',
+    'Exercise',
+    'Nutrition',
+    'Spirituality',
+  ];
+
   return (
     <div className="check-in-grid">
-      <h3>And I spent time on ... </h3>
+      <h3>And I spent time with my </h3>
       <ul className="check-in-grid__list">
-        <li>Friends</li>
-        <li>Family</li>
-        <li>Partner</li>
-        <li>Hobbies</li>
-        <li>Home</li>
-        <li>Career</li>
-        <li>Exercise</li>
-        <li>Nutrition</li>
-        <li>Spirituality</li>
+        { defaultOptions.map(option => (
+          <CheckInGridItem item={option} />
+        ))
+        }
       </ul>
     </div>
   );

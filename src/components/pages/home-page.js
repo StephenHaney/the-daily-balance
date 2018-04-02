@@ -1,5 +1,7 @@
 import React, { } from 'react';
 
+import { AppStateConsumer } from 'app.js';
+
 import CheckInGrid from '../check-in-grid';
 import MoodGrid from '../mood-grid';
 
@@ -12,4 +14,8 @@ function HomePage() {
   )
 }
 
-export default HomePage;
+export default props => (
+  <AppStateConsumer>
+    {context => <HomePage {...props} appState={context} />}
+  </AppStateConsumer>
+);

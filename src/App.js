@@ -8,6 +8,7 @@ import firebase from './firebase/firebase';
 import routes from 'routes';
 
 /* Components */
+import AuthOverlay from 'components/auth-overlay';
 import DateBar from 'components/date-bar';
 import FooterBar from 'components/footer-bar';
 import Loader from 'components/loader';
@@ -36,6 +37,8 @@ class App extends Component {
   render() {
     let content = (
       <div className="the-daily-balance-app">
+        <div className="egg">:D</div>
+        <AuthOverlay />
         <DateBar />
         {routes}
         <FooterBar />
